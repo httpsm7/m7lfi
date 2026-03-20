@@ -1,0 +1,37 @@
+# m7lfi Configuration
+# Milkyway Intelligence | Author: Sharlix
+
+# ── Performance ───────────────────────────────────────────────────
+threads: 50          # Concurrent async workers (fast: 200, stealth: 10)
+timeout: 10          # HTTP request timeout in seconds
+retry: 2             # Retry attempts on timeout/connect failure
+
+# ── Scan Mode ─────────────────────────────────────────────────────
+# fast    → no WAF, high speed, no delay
+# smart   → start fast, auto-slow on WAF detection  [RECOMMENDED]
+# stealth → slow, randomized, mimics human traffic
+mode: smart
+
+# ── Rate Control ─────────────────────────────────────────────────
+delay: 0.3           # Base delay between requests (seconds)
+jitter: 0.2          # ± random jitter added to delay
+
+# ── Proxy ─────────────────────────────────────────────────────────
+proxy: null          # Set to "http://127.0.0.1:8080" for Burp Suite
+
+# ── SSL ───────────────────────────────────────────────────────────
+verify_ssl: false    # Set true for production SSL validation
+
+# ── Payload Categories ────────────────────────────────────────────
+# "all" or comma-separated: linux,traversal,encoding,wrappers,framework
+categories: all
+
+# ── Exploit Mode ──────────────────────────────────────────────────
+# Run post-exploitation chains after LFI confirmation
+exploit: false
+
+# ── Output ────────────────────────────────────────────────────────
+output_dir: output/reports
+
+# ── Logging ───────────────────────────────────────────────────────
+verbose: false       # Show result for every payload attempt
